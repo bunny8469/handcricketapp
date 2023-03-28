@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat mode</title>
+	<link rel = "stylesheet" type = "text/css" href = "../Chat/styles.css">
+</head>
+<body>
+	<main>
+		<header>Chat #<span id="chat-no"><%= id %></span></header>
+		<div id = "chat-box" class = "chat-box">
+			<div class = "msg-send">
+				<input class = "message-field" id="message-field" type="text" name="message" onkeydown="enter()" autocomplete="off">
+				<i class="fas fa-paper-plane" onclick="sendMsg()"></i>
+			</div>
+		</div>
+		
+	</main>
+
+	<script src="../../socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var roomId = <%- JSON.stringify(id) %>
+	</script>
+	<script type = "text/javascript" src = "../Chat/clientchat.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cookies || Hand Cricket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Helvetica&family=Ubuntu&family=Poppins&family=Montserrat:wght@700&family=Raleway:wght@600&display=swap');
+
+		body{
+			margin:0;
+			padding:0;
+			background: #5bffc8;
+			height: 100vh;
+			width: 100vw;
+			font-family: 'Helvetica';
+			user-select: none;
+		}
+		*{
+			margin:0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		main{
+			width:100vw;
+			height:100vh;
+			max-width:450px;
+			max-height:680px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+			background-color: #f9f9f9;
+			overflow: hidden;
+		}
+		header{
+			background:#ff4d90;
+			height:10%;
+			width:100%;
+			color:white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Poppins";
+			letter-spacing: 1px;
+			font-weight: bolder;
+			font-size: 150%;
+			z-index:2;
+		}
+		.mid-box{
+			position: absolute;
+			top:40%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:100%;
+			text-align: center;
+		}
+		input[type='text']{
+			padding:2.5px 5px;
+			text-transform: capitalize;
+			margin-left:10px;
+		}
+		input[type='submit']{
+			padding:2.5px 5px;
+			background-color: #ff4d90;
+			color:white;
+			font-family: 'Poppins';
+			border:none;
+			margin-top:20px;
+			width:40%;
+			cursor: pointer;
+		}
+		.notice{
+			font-family: 'Poppins';
+			font-size:100%;
+			margin:0 20px;
+			position: absolute;
+			bottom: 7.5%;
+		}
+
+
+		@media (max-width: 480px){
+			body{
+				max-height: calc(100vh - 56px);
+				width: 100vw;
+			}
+			main{
+				max-height: calc(100vh - 56px);
+				max-width:100vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header>Save in Cookies</header>
+		<p class='notice'>By saving your name in browser cookies, you don't have to re-enter the name everytime you join a room.</p>
+		<form class='mid-box' action='/save-name' method="POST">
+			<label for="name">Your Sweet Name:</label>
+			<input type="text" class='text' placeholder='Your Name' name="name" required="true" autocomplete="off"><br>
+			<input type='submit' value="Save">
+		</form>
+	</main>
+	<script type="text/javascript">
+		document.querySelector('.text').focus()
+	</script>
+</body>
+</html>

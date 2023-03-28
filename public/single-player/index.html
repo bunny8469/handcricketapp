@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Single Player || Hand Cricket</title>
+	<link rel = "stylesheet" type = "text/css" href = "./styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<main id = "main">
+		<header class = "header">Single Player</header>
+		<div class = "main-sheet"></div>
+		<div id = "heading-all"></div>
+		
+		<div class = "balls-div">
+			<div class = "you-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			<div class = "other-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			<div class = "comp-block">Comp</div>
+			
+			<div class = "scores"><span class="score" id = "player-score">0</span>:<span class="score" id = "opponent-score">0</span></div>
+
+			<div class = "you-stat stat-block"></div>
+			<div class = "other-stat stat-block"></div>
+
+			<div class = "ball-grid-view">
+				<button class = "ball-btn btn1" onclick = "ball(1)"><span class = 'num'>1</span></button>
+				<button class = "ball-btn btn2" onclick = "ball(2)"><span class = 'num'>2</span></button>
+				<button class = "ball-btn btn3" onclick = "ball(3)"><span class = 'num'>3</span></button>
+				<button class = "ball-btn btn4" onclick = "ball(4)"><span class = 'num'>4</span></button>
+				<button class = "ball-btn btn5" onclick = "ball(5)"><span class = 'num'>5</span></button>
+				<button class = "ball-btn btn6" onclick = "ball(6)"><span class = 'num'>6</span></button>
+			</div>
+		</div>
+
+
+		<div class = "rect-container">
+			<div class = "three-rect rect1"></div>
+			<div class = "three-rect rect2"></div>
+			<div class = "three-rect rect3"></div>
+		</div>
+	</main>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script type="text/javascript" src='./script.js'></script>
+</body>
+</html>

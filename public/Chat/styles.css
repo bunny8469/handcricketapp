@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Gayathri&family=Ubuntu&family=Poppins&family=Kumbh+Sans&family=Lobster&family=Montserrat:wght@700&family=Satisfy&family=Raleway:wght@600&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+	background: #fbecec;
+	height: 100vh;
+	width:100vw;
+}
+main{
+	width:100vw;
+	height:100vh;
+	max-width:450px;
+	overflow: hidden;
+	height: 100vh;
+	max-height:680px;
+	border-radius:10px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+	background-color: #f9f9f9;
+	transition:0.6;
+}
+header{
+	background:#99f3bd;
+	height:10%;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "kumbh Sans";
+	font-weight: bolder;
+	font-size: 150%;
+}
+.msg-send{
+	width:100%;
+	display: inline-flex;
+	position: fixed;
+	bottom:0;
+	background: white;
+	z-index:5;
+	padding-bottom:20px;
+}	
+
+.message-field{
+	height:40px;
+	width:70%;
+	border:2px solid #91d18b;
+	background: rgba(255,255,255,0.1);
+	font-family: "poppins";
+	font-size:100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left:20px;
+}
+.send-btn{
+	border:none;
+	height:40px;
+	width:60px;
+	margin-left:10px;
+	cursor: pointer;
+	font-family: "poppins";
+	background: #faf0af;
+}
+.chat-box{
+	height:100vh;
+	overflow: auto;
+}
+.msg-box{
+	font-family: "poppins";
+	height: auto;
+	min-height: 35px;
+	width:90%;
+	display: flex;
+	align-items: center;
+	padding:5px;
+	padding-left:0;
+	padding-bottom:4px;
+	position: relative;
+	left:50%;
+	transform: translateX(-50%);
+	margin-bottom:7.5px;
+}
+.chat-box .msg-box:nth-child(2n){
+	background: rgba(100,245,100,0.2);
+}
+.chat-box .msg-box:nth-child(2n+1){
+	background: rgba(245,245,100,0.2);
+}
+.username{
+	position: relative;
+	top:-12px;
+	color:violet;
+	font-family:"kumbh sans";
+	font-size:70%;
+	font-weight: bolder;	
+	text-transform: uppercase;
+	margin-left:10px;
+}
+
+
+@media (max-width: 600px){
+	main{
+		border-radius:0;
+	}
+	header{
+		font-size: 120%;
+	}
+}

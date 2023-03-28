@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home || Hand Cricket</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				background: #5bffc8;
+				height: 100vh;
+				width: 100vw;
+				user-select: none;
+			}
+			main{
+				width:100vw;
+				height:100vh;
+				max-width:450px;
+				overflow: hidden;
+				max-height:680px;
+				position: absolute;
+				top:50%;
+				left:50%;
+				display: flex;
+				justify-content: center;
+				align-items:center;
+				flex-direction: column;
+				transform: translate(-50%,-50%);
+				box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+				background-color: #f9f9f9;
+			}
+			header{
+				font-family:'Arial';
+				font-weight: bolder;
+				font-size:150%;
+				height: 10%;
+				background-color: #ff4d90;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				color:white; 
+				position: fixed;
+				top:0;
+				width:100%;
+			}
+			.select-opt{
+				width:auto;
+				height: 60px;
+				border:4px solid black;
+				font-family:"Poppins";
+				cursor:pointer;
+				font-size:110%;
+				font-weight: bolder;
+				margin:20px;
+				margin-left: 0;
+				background:#deffab;
+				position: relative;
+			}
+			.fa-plus-circle{
+				margin-right: 10px;
+				font-size:110%;
+			}
+			.fa-sign-in-alt{
+				margin-right: 10px;
+				font-size:110%;
+			}
+			.fa-user:nth-child(1){
+				margin-right: 10px;
+				font-size:110%;
+			}
+			.fa-user:nth-child(2){
+				margin-left: 10px;
+				font-size:110%;
+			}
+			.fa-user-friends{
+				margin-right:10px;
+				font-size: 110%;
+			}
+			.foott{
+				font-family: "Poppins";
+				font-weight: bolder;
+				position: absolute;
+				bottom:10%;
+				width:100%;
+				text-align:center;
+				font-size: 120%;
+			}
+			
+			.single-player{
+				position: relative;
+				left:-100%;
+			}
+			.onev1{
+				position: relative;
+				right:-100%;
+			}
+			.teams{
+				position: relative;
+				bottom:-100%;
+			}
+			.hidden{
+				display: none;
+			}
+			.fa-arrow-circle-left{
+				color:#fff;
+				position: absolute;
+				left:15px;
+				background-color: black;
+				font-size:120%;
+				border-radius: 50%;
+				display: none;
+				cursor:pointer;
+			}
+
+			@media(max-width:480px){
+				body{
+					overscroll-behavior-y: contain;
+					max-height: calc(100vh - 56px);
+					width: 100vw;
+				}
+				main{
+					max-height:calc(100vh - 56px);
+					max-width:100vw;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header><i class="fas fa-arrow-circle-left" onclick='goBack()'></i>Home Page</header>
+			<a href="/single-player" class="single-player pl0"><button class = "select-opt">Single Player</button></a>
+			<button style="background-color: #ffd3d3;" class = "select-opt onev1 pl1" onclick='showOne()'><i class="fas fa-user"></i>1 vs 1<i class="fas fa-user"></i></button>
+			<button onclick='showTeam()' style="background-color: #d3feff;" class = "select-opt teams pl2"><i class="fas fa-user-friends"></i>Teams</button>
+
+
+			<a href="/match-new" class='hidden pl11'><button style="background-color: #ffd3d3;" class = "select-opt"><i class="fas fa-plus-circle"></i>Create match</button></a>
+			<a href="/join-match" class='hidden pl12'><button style="background-color: #d3feff;" class = "select-opt"><i class="fas fa-sign-in-alt"></i>Join Other's match</button></a>
+
+
+			<a href="/teams-new" class='hidden pl21'><button style="background-color: #ffd3d3;" class = "select-opt"><i class="fas fa-plus-circle"></i>Create Team room</button></a>
+			<a href="/join-team" class='hidden pl22'><button style="background-color: #d3feff;" class = "select-opt"><i class="fas fa-sign-in-alt"></i>Join Other's Room</button></a>
+
+			<a href='/save-name'></a>
+
+			<p class = "foott">Choose the mode</p>
+		</main>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+		<script type="text/javascript">
+			gsap.to('.single-player', {duration:0.6, delay:0.3, left:'0', ease:'sine.out'})
+			gsap.to(".onev1", {duration:0.6, delay:0.3, right:'0', ease:'sine.out'})
+			gsap.to(".teams", {duration: 0.6, delay:0.3, bottom:'0', ease:'sine.out'})
+			setTimeout(function(){
+				document.querySelector('.single-player').style.left = '0'
+				document.querySelector('.onev1').style.right = '0'
+				document.querySelector('.teams').style.bottom = '0'
+			}, 2000)
+			function showOne(){
+				document.querySelector('.pl11').style.display = 'block'
+				document.querySelector('.pl12').style.display = 'block'
+				document.querySelector('.pl0').style.display = 'none'
+				document.querySelector('.pl1').style.display = 'none'
+				document.querySelector('.pl2').style.display = 'none'
+				document.querySelector('.pl21').style.display = 'none'
+				document.querySelector('.pl22').style.display = 'none'
+				document.querySelector(".fa-arrow-circle-left").style.display = 'block'
+			}
+			function showTeam(){
+				document.querySelector('.pl11').style.display = 'none'
+				document.querySelector('.pl12').style.display = 'none'
+				document.querySelector('.pl0').style.display = 'none'
+				document.querySelector('.pl1').style.display = 'none'
+				document.querySelector('.pl2').style.display = 'none'
+				document.querySelector('.pl21').style.display = 'block'
+				document.querySelector('.pl22').style.display = 'block'
+				document.querySelector(".fa-arrow-circle-left").style.display = 'block'
+			}
+			function goBack(){
+				document.querySelector('.pl11').style.display = 'none'
+				document.querySelector('.pl12').style.display = 'none'
+				document.querySelector('.pl0').style.display = 'block'
+				document.querySelector('.pl1').style.display = 'block'
+				document.querySelector('.pl2').style.display = 'block'
+				document.querySelector('.pl21').style.display = 'none'
+				document.querySelector('.pl22').style.display = 'none'
+				document.querySelector(".fa-arrow-circle-left").style.display = 'none'
+			}
+		</script>
+	</body>
+</html>

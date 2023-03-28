@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join Team || Hand Cricket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../join-room/join-team/jtstyles.css">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<main>
+		<header><a href='/home'><i class='fas fa-home'></i></a> Join Team</header>
+		<div class="rooms"></div>
+	</main>
+	<script type="text/javascript">
+		const teams = <%- JSON.stringify(data) -%>;
+	</script>
+	<script type="text/javascript" src='../../join-room/join-team/jtscript.js'></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pacifico&family=Gayathri&family=Ubuntu&family=Poppins&family=Kumbh+Sans&family=Lobster&family=Montserrat:wght@700&family=Satisfy&family=Raleway:wght@600&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+	background: #5bffc8;
+	height: 100vh;
+	width: 100vw;
+	user-select: none;
+}
+main{
+	width:100vw;
+	height:100vh;
+	max-width:450px;
+	overflow: hidden;
+	max-height:680px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+	background-color: #f9f9f9;
+}
+header{
+	background:#ff4d90;
+	color:white;
+	height:10%;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "poppins";
+	font-weight: bolder;
+	font-size: 150%;
+	z-index:2;
+}
+.password-box{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	height:50%;
+	width:80%;
+	max-width:300px;
+	max-height:300px;
+	background: #fff;
+	border-radius:5px;
+	flex-direction: column;
+	font-family:'montserrat';
+	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+	transform-origin: bottom;
+	transform:scaleY(0); 
+	font-size:120%;
+	z-index:5;
+}
+.passwd-input{
+	margin:20px 0 15px 0;
+	width:70%;
+	text-align:center;
+	font-family:'Poppins';
+	font-size: 100%;
+	height:30px;
+	border:none;
+	border: 1px solid #ccc;
+}
+.passwd-sbmt{
+	font-family: 'Poppins';
+	background:#fff;
+	height: 40px;
+	min-width: 80px;
+	padding:0 10px 0 10px;
+	font-weight:bolder;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+	transform: scale(0.9);
+	border:1px solid #000;
+	cursor:pointer;
+	transition: 0.4s;
+}
+.passwd-sbmt:hover{
+	background: #444;
+	color:#fff;
+}
+.fa-circle-o-notch{
+	margin:0 5px 0 0;
+	transform: scale(1.05);
+}
+.main-sheet{
+	width:90%;
+	height:90%;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	font-family:Poppins;
+	font-size:120%;
+	flex-direction: column;
+	z-index:10;
+	padding: 0 5% 0 5%;
+}
+.game-over{
+	font-family:'Press Start 2P', "Montserrat";
+	font-size:140%;
+}
+.whatsapp-link{
+	text-decoration: none;
+	color:white;
+	background-color: #25d366;
+	position: absolute;
+	top:12%;
+	right:5%;
+	font-family: 'poppins';
+	padding:2px 5px;
+	display: none;
+}
+td{
+	text-transform: capitalize;
+}
+.ghome-btn{
+	position: absolute;
+	left: 50%;
+	bottom:20%;
+	transform: translate(-50%,-50%);
+	background-color: #ff4d90;
+	padding:10px 15px;
+	color:white;
+	cursor: pointer;
+	border:none;
+	font-family: "Poppins";
+	text-decoration: none;
+}
+.ghome-btn:active{
+	color:white;
+}
+.ripple{
+	display:block;
+	height:10px;
+	width:10px;
+	background-color:#ddd;
+	position:absolute;
+	pointer-events: none;
+	transform:translate(-50%,-50%);
+	opacity:0.6;
+	border-radius:50%;
+	z-index: 1;
+}
+.num{
+	z-index: 2;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+#wait-load{
+	margin-top:10px;
+	font-size: 120%;
+}
+.rect-container{
+	display: flex;
+	flex-direction: row;
+}
+.three-rect{
+	width:33.33%;
+	height:90%;
+	position: absolute;
+	bottom: 0;
+	z-index:3;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	background:#aeffbe;
+}
+.rect1{
+	left:0%;
+}
+.rect2{
+	left:33.33%;
+}
+.rect3{
+	left:66.67%;
+}
+.toss-btn, .choose-btn{
+	transform: skew(20deg);
+	height:40px;
+	width:120px;
+	min-width:100px;
+	cursor:pointer;
+	justify-content: center;
+	align-items:center;
+	font-family:Poppins;
+	background-color: white;
+	border:1px solid black;
+	transition: 0.3s;
+	position: absolute;
+	left:37.5%;
+	z-index:8;
+	display: none;
+}
+.t1,.c1{
+	top:-50px;
+}
+.t2,.c2{
+	bottom:-50px;
+}
+.balls-div{
+	position: absolute;
+	bottom:-90%;
+	height: 90%;
+	width: 100%;
+	background-color: #fff;
+	text-align: center;
+	display: none;
+}
+.ball-grid-view{
+	width: 340px;
+	display: grid;
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: 100px 100px;
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	height: auto;
+	transform: translateX(-50%);
+}
+.ball-btn{
+	height:100px;
+	width:100px;
+	border:1.5px solid #8000ff;
+	background-color: #fff;
+	border-radius:3px;
+	font-family: poppins;
+	font-size: 120%;
+	background: inherit;
+	cursor: pointer;
+	overflow:hidden;
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+}
+.toss-btn:hover,.choose-btn:hover{
+	background-color: #333;
+	color:white;
+}
+.toss-btn span{
+	transform: skew(-20deg);
+}
+.choose-btn span{
+	transform: skew(-20deg);
+}
+.hide{
+	position: absolute;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	display: none;
+}
+#heading-all{
+	position: absolute;
+	top:15%;
+	left:50%;
+	text-align: center;
+	width: 100%;
+	transform: translateX(-50%);
+	font-family:'Montserrat';
+	font-size:160%;
+	z-index:7;
+	text-decoration: underline;
+}
+.big-num{
+	font-size:130%;
+	font-family: poppins;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px;
+	margin-right:20px;
+	border:1px solid #333;
+	height: 90px;
+	width: 90px;
+	position: absolute;
+	top:25%;
+	cursor: crosshair;
+}
+.you-num{
+	left:0;
+}
+.other-num{
+	right:0;
+}
+.fa-cog{
+	color:#777;
+}
+.stat-block{
+	font-family:"ubuntu";
+	width:50px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #74ffd9;
+	position: absolute;
+	top:calc(25% + 120px);
+	font-size:80%;
+	color:#111;
+	text-transform: capitalize;
+}
+.you-stat{
+	left:5%;
+}
+.other-stat{
+	background-color: #ff7c8c;
+	right:5%;
+	color:#fff;
+}
+.scores{
+	font-family:'Montserrat';
+	position: absolute;
+	font-size:135%;
+	top:30%;
+	left:50%;
+	transform: translateX(-50%);
+	display: none;
+}
+.score{
+	margin:7.5px;
+}
+.messages-div{
+	padding:10px;
+	width:100%;
+	height:25px;
+	overflow: scroll;
+	overflow-y:hidden;
+	list-style:none;
+	display: none;
+	float: left;
+	white-space: nowrap;
+	position: absolute;
+	top:46%;
+}
+.small-msg{
+	height:10px;
+	padding: 5px;
+	display: inline;
+	border-radius:10%;
+	background-color: #efefef; 
+	font-family:"Raleway";
+	margin:0 2.5px 0 2.5px;
+	font-size: 80%;
+	cursor:pointer;
+}
+.notif{
+	font-family: "Raleway";
+	background-color: #c6ffa5;
+	color:#444;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height:30px;
+	padding:4px 10px;
+	font-size:90%;
+	position: absolute;
+	top:-50px;
+	left:50%;
+	transform: translateX(-50%);
+	z-index:100;
+}
+.notif::before{
+	font-family: 'Font Awesome 5 Free';
+	content: '\f05a';
+	font-weight: 900;
+	margin-right: 5px;
+}
+.share-btn{
+	width:25px;
+	height:25px;
+	background: #444;
+	color:white;
+	z-index:50;
+	position: absolute;
+	top:12%;
+	right:30%;
+	display: none;
+	justify-content:center;
+	align-items: center;
+	border:none;
+	cursor:pointer;
+}
+
+
+@media (max-width: 480px){
+	body{
+		overscroll-behavior-y: contain;
+		max-height: calc(100vh - 56px);
+		width: 100vw;
+	}
+	main{
+		max-height: calc(100vh - 56px);
+		max-width:100vw;
+	}
+	.toss-btn,.choose-btn{
+		left:50%;
+	}
+	.ball-btn{
+		height: 80px;
+		width:80px;
+	}
+	.ball-grid-view{
+		width:280px;
+		grid-template-columns: 80px 80px 80px;
+		grid-template-rows: 80px 80px;
+		transform: translateX(-50%);
+	}
+	.big-num{
+		height: 70px;
+		width:70px; 
+	}
+	.stat-block{
+		top:calc(25% + 90px);
+	}
+	.you-stat{
+		left:7%;
+		top:18.5%;
+	}
+	.other-stat{
+		right:7%;
+		top:18.5%;
+	}
+	.messages-div{
+		top:42.5%;
+		display: inline-block;
+	}
+	.notif{
+		width:80%;
+	}
+}

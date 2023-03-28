@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Teams Room || Hand Cricket</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			padding:0;
+			background: #5bffc8;
+			height: 100vh;
+			font-family:"Poppins";
+			width: 100vw;
+			user-select: none;
+		}
+		main{
+			width:100vw;
+			height:100vh;
+			max-width:450px;
+			overflow: hidden;
+			max-height:680px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+			background-color: #f9f9f9;
+		}
+		header{
+			font-family:'Arial';
+			font-weight: bolder;
+			font-size:150%;
+			height: 10%;
+			background-color: #ff4d90;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			color:white; 
+			position: fixed;
+			top:0;
+			width:100%;
+		}
+		.mid-box{
+			width:80%;
+			height: 60%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transform: translate(-50%, -50%);
+		}
+		#room-name-field{
+			margin-left:30px;
+		}
+		#password-field{
+			margin-left: 21px;
+		}
+		input[type='number']{
+			height: 30px;
+			width:100px;
+			font-weight:lighter;
+			text-align: center;
+			font-size:110%;
+			border:2px solid #ddd;
+		}
+		label{
+			font-size:110%;
+		}
+		input[type='submit']{
+			border:1px solid #444;
+			margin-top:40px;
+			padding:10px 20px;
+			font-family:'poppins';
+			transition: 0.4s;
+			cursor:pointer;
+			background-color: white;
+		}
+		input[type='submit']:hover{
+			background-color: #555;
+			color:white;
+		}
+		p{
+			text-align:center;
+		}
+		.fa-home{
+			position: absolute;
+			left:10%;
+			top:50%;
+			transform: translateY(-50%);
+			color:white;
+			border-radius: 50%;
+			padding:7.5px;
+			font-size:80%;
+			border:1px solid white;
+		}
+
+		@media (max-width: 480px){
+			body{
+				overscroll-behavior-y: contain;
+				max-height: calc(100vh - 56px);
+				width: 100vw;
+			}
+			main{
+				max-height: calc(100vh - 56px);
+				max-width:100vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header><a href='/home'><i class='fas fa-home'></i></a> New Teams</header>
+		<div class="mid-box">
+			<form action="/teams-new" method="POST">
+				<p><label for="room">Room id: </label>
+				<input type="number" id='room-name-field' class="room-id-name" name='room' value="<%- id -%>" readonly></p>
+				<p><label for="password" class="label">Password: </label>
+				<input placeholder="***" name='password' id='password-field' type = "number" required></p>
+				<p><input type="submit" value="Create New Teams"></p>
+			</form>
+			
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Gayathri&family=Ubuntu&family=Poppins&family=Kumbh+Sans&family=Lobster&family=Montserrat:wght@700&family=Satisfy&family=Raleway:wght@600&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+	background-color:#fbecec;
+	height: 100vh;
+	width:100vw;
+}
+main{
+	width:100vw;
+	max-width:450px;
+	overflow: auto;
+	height: 100vh;
+	max-height:680px;
+	border-radius:10px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+	background-color: #f9f9f9;
+	transition:0.6;
+}
+.skew-heading{
+	position:absolute;
+	top:10vh;
+	left:50%;
+	padding:10px;
+	transform:translate(-50%,0);
+}
+.skew-hand,.skew-cricket{
+	height:60px;
+	width:180px;
+	transform:skew(-20deg);
+	background-color:#e11d74;
+	color:#fff;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	font-size:150%;
+	font-family:Montserrat;
+}
+.skew-hand{
+	background-color:#91d18b;
+}
+.skew-cricket{
+	margin-left:60px;
+}
+span{
+	transform: skew(20deg);
+}
+.heading-img{
+	width:50px;
+	height:50px;
+	position: absolute;
+	top:10px;
+	right:10px;
+}
+.heading-img2{
+	width:30px;
+	height:30px;
+	position: absolute;
+	bottom:25px;
+	left:20px;
+}
+.login-register{
+	position: absolute;
+	top:65%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:80%;
+	height:47.5%;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	background: #fff;
+	overflow: auto;
+	background: #e94560;
+}
+.form-head{
+	display:inline-flex;
+}
+.form-head-el{
+	font-family:"kumbh sans";
+	margin:20px 0 10px 30px;
+	font-weight: bolder;
+	font-size:120%;
+	border-bottom:0px solid #00d;
+	text-transform: uppercase;
+	transition: 0.6s;
+	cursor:pointer;
+}
+.form-head-el::after{
+	content:'';
+	display: block;
+	height:2px;
+	background: #fff;
+	width:0;
+	transition: 0.4s;
+	transform: translateY(3px);
+}
+.form-head-el-active::after{
+	width:100%;
+}
+.form-head-el:hover::after{
+	width:100%;
+}
+.form-head-el a{
+	text-decoration: none;
+	color:#eee;
+}
+.form-head-el-active{
+	color: white;
+}
+#name-field{
+	text-transform: capitalize;
+}
+.form-input{
+	height:40px;
+	min-width:80%;
+	margin-left:7.5%;
+	padding-left:5%;
+	border:none;
+	border-bottom:2px solid #ddd;
+	background: rgba(255,255,255,0.1);
+	color:#fff;
+	font-family: "kumbh sans";
+	font-size:100%;
+}
+label{
+	font-family:"Gayathri";
+	font-size:80%;
+	display: block;
+	color:#eee;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	margin-bottom:3px;
+	margin-top:20px;
+	margin-left:7.5%;
+}
+.show-pass{
+	color:white;
+	font-size:110%;
+	margin-left:-30px;
+	cursor:pointer;
+}
+.fa-eye{
+	margin-left:-40px;
+}
+.fa-eye-slash{
+	margin-left:-25px;
+}
+.fa-eye-slash{
+	visibility: hidden;
+}
+
+.login{
+	margin-top:30px;
+}
+.create-account-statement{
+	font-family:"Raleway";
+	position: absolute;
+	bottom:20px;
+	left:25%;
+}
+.submit-log-reg{
+	width:40%;
+	height:40px;
+	background: #fff;
+	color:#000;
+	font-family:"Montserrat";
+	font-weight: lighter;
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	bottom:30px;
+	border:1px solid #000;
+	font-size:100%;
+	cursor:pointer;
+	transition: 0.4s;
+}
+.submit-log-regg{
+	bottom:20px;
+}
+.submit-log-reg:hover{
+	background:linear-gradient(90deg,#91d18b 0%,#91d18b 10%,#fff 11%,#fff 89%,#e11d74 90%,#e11d74 100%);
+}
+.create-account-statement-reg{
+	bottom: 5px;
+}
+.login-register-reg{
+	height:55%;
+}
+.skew-heading-reg{
+	top:7.5vh;
+}
+a{
+	transition: color 0.5s;
+}
+.form-head-el a:hover{
+	color:white;
+}
+a:active{
+	color:lightgreen;
+}
+
+@media (max-width: 600px){
+	main{
+		border-radius:0;
+	}
+	.skew-heading{
+		transform: translate(-50%,0) 
+				   scale(0.8);
+	}
+	.skew-heading-reg{
+		top:7.5vh;
+	}
+	.form-head-el{
+		font-size:95%;
+		margin-left:20px;
+		margin-top:15px;
+	}
+	.form-input{
+		height:30px;
+		font-size: 90%;
+	}
+	.login{
+		margin-top:20px;
+	}
+	.login-register{
+		height:52.5%;
+	}
+	.show-pass{
+		font-size:90%;
+		margin-left:-25px;
+	}
+	label{
+		font-size: 70%;
+		margin-top:10px;
+	}
+	.create-account-statement{
+		font-size:80%;
+		bottom:2px;
+		width:auto;
+	}
+	.login-register-reg{
+		height:56%;
+	}
+	.submit-log-reg{
+		height: 30px;
+		bottom:20px;
+	}
+	.submit-log-regg{
+		bottom:8px;
+	}
+}

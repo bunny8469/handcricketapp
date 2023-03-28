@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1v1 || Hand Cricket</title>
+	<link rel = "stylesheet" type = "text/css" href = "../Match/matchstyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<main id = "main">
+		<header class = "header">Match #<%- id -%></header>
+		<div class = "main-sheet"></div>
+		<div id = "heading-all"></div>
+		
+		<button class="share-btn"><i class='fas fa-share-alt'></i></button>
+		<a class='whatsapp-link' href="#" data-action="share/whatsapp/share">Invite <i class="fab fa-whatsapp"></i></a>
+		<div class = "balls-div">
+			<div class = "you-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			<div class = "other-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			
+			<div class = "scores"><span class="score" id = "player-score">0</span>:<span class="score" id = "opponent-score">0</span></div>
+
+			<div class = "you-stat stat-block"></div>
+			<div class = "other-stat stat-block"></div>
+
+			<ul class = "messages-div">
+				<li class = "small-msg">Hello</li>
+				<li class = "small-msg">Good Luck</li>
+				<li class = "small-msg">😂😂😂</li>
+				<li class = "small-msg">Arey! Enti ra Idhi?</li>
+				<li class = "small-msg">😝😝😝</li>
+				<li class = "small-msg">Make it fast</li>
+				<li class = "small-msg">Game ra!</li>
+				<li class = "small-msg">Test</li>
+			</ul>
+
+			<div class = "ball-grid-view">
+				<button class = "ball-btn btn1" onclick = "ball(1)"><span class = 'num'>1</span></button>
+				<button class = "ball-btn btn2" onclick = "ball(2)"><span class = 'num'>2</span></button>
+				<button class = "ball-btn btn3" onclick = "ball(3)"><span class = 'num'>3</span></button>
+				<button class = "ball-btn btn4" onclick = "ball(4)"><span class = 'num'>4</span></button>
+				<button class = "ball-btn btn5" onclick = "ball(5)"><span class = 'num'>5</span></button>
+				<button class = "ball-btn btn6" onclick = "ball(6)"><span class = 'num'>6</span></button>
+			</div>
+		</div>
+
+		<div class = "toss-btn t1"><span>Odd</span></div>
+		<div class = "toss-btn t2"><span>Even</span></div>
+		
+		<div class = 'choose-btn c1'><span>Bat</span></div>
+		<div class = 'choose-btn c2'><span>Bowl</span></div>
+
+		<div class = "rect-container">
+			<div class = "three-rect rect1"></div>
+			<div class = "three-rect rect2"></div>
+			<div class = "three-rect rect3"></div>
+		</div>
+
+	</main>
+
+	<div class ="password-box">
+		Enter Password:
+		<input type="number" id="passwd" class = "passwd-input">
+		<button class = "passwd-sbmt" onclick = "join()">Join</button>
+	</div>
+
+	<script src="../../socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var pwd = <%- JSON.stringify(pwd) -%>;
+		var name = <%- JSON.stringify(nm) -%>;
+		const roomId = <%- JSON.stringify(id) -%>;
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script type = "text/javascript" src = "../Match/client.js"></script>
+
+</body>
+</html>

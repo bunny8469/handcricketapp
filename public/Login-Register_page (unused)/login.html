@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hand Cricket v2.0</title>
+	<link rel = 'stylesheet' type = 'text/css' href = "./Login-register_page/main.css">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<main>
+		<section class = "skew-heading">
+			<div class = 'skew-hand'><span>Hand</span></div>
+			<img class = "heading-img" src = './Login-register_page/images/Bat_cartoon.png'>
+			<img class = "heading-img2" src = './Login-register_page/images/ball_cartoon.png'>
+			<div class = 'skew-cricket'><span>Cricket</span></div>
+		</section>
+		<section class = "login-register">			
+				<div class = "form-head">
+					<p class = "form-head-el form-head-el-active">Log in</p>
+					<p class = "form-head-el"><a href = './register'>Register</a></p>
+				</div>
+				<div class = "login">
+					<form action = "/login" method = "POST">
+						<label for = "name">NAME</label>
+						<input type = "text" class = "form-input" id = "name-field" name = 'name' placeholder="Your Nickname" required="true" autocomplete="off">
+						<label for = "password">PASSWORD</label>
+						<input type = "password" name = 'password' id = "password-field" class = "form-input" placeholder="Password" required="true">
+							<i class="fas fa-eye show-pass" id = "fa-eye" onclick="showhidePassword()"></i>
+							<i class="fas fa-eye-slash show-pass" id = "fa-eye-slash" onclick = "showhidePassword()"></i>
+						<input type = "submit" value="Login" class = "submit-log-reg">
+					</form>
+				</div>
+		</section>
+		<p class = "create-account-statement">New User? Register <a href = "./register">here</p>
+	</main>
+
+	<script type="text/javascript" src="./Login-register_page/JS_code/frontend.js"></script>
+</body>
+</html>

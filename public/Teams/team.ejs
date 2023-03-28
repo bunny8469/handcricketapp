@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teams</title>
+	<link rel = "stylesheet" type="text/css" href="../Teams/teamstyles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<main id="main">
+		<header>Teams #<%- id -%></header>
+
+		<div class = "team-table">
+			<div class = "teamA team-side">
+				<p class = "team-name">WarBringers</p>
+			</div>
+			<div class = "teamB team-side">
+				<p class = "team-name">Howlers</p>
+			</div>
+		</div>
+		<p class="tot-tm-score score-WarBringers">0</p>
+		<p class="tot-tm-score score-Howlers">0</p>
+		<div class = "waiting-portion sub-matches">
+			<p class = 'stat-blo stat-WarBringers'></p>
+			<a class='whatsapp-link' href="#" data-action="share/whatsapp/share">Invite <i class="fab fa-whatsapp"></i></a>
+			<button class="share-btn"><i class='fas fa-share-alt'></i> Share</button>
+			<p class = "wait-head inin-head">Waiting Players</p>
+			<p class = 'stat-blo stat-Howlers'></p>
+			<ul class = "waiting-list"></ul>
+			<table class = "inin-table">
+				
+			</table>
+		</div>
+		
+		<p class = "continue-btn">CONTINUE</p>
+		<i class = "fas fa-comment-dots" onclick="changeMsgCont()"></i>
+		<div class = "msg-cont">
+			<div class = "all-msgs"></div>
+			<input class = "message-field" id="message-field" type="text" name="message" onkeydown="enter()" autocomplete="off" placeholder="Type a Message..">
+			<i class="fas fa-paper-plane" onclick="sendMsg()"></i>
+		</div>
+		<p class = "msg-screen"></p>
+		<div class = "toss-screen">
+			<p class = "toss-heading heading-al">Toss</p>
+			<img src = "../Teams/images/heads-coin.png" onclick = "tossEL('heads')" class = "toss-coin heads-toss">
+			<img src = "../Teams/images/tails-coin.png" onclick = "tossEL('tails')" class = "toss-coin tails-toss">
+			<p class = "toss-name name-heads" onclick = "tossEL('heads')">Heads</p>
+			<p class = "toss-name name-tails" onclick = "tossEL('tails')">Tails</p>
+			<p class = "result-div"><u>Result: </u><span class = "res-span"><i class = "fas fa-cog"></i></span></p>
+			<p class = "toss-para norm-para"></p>
+		</div>
+		<div class = "game-over-screen"></div>
+		<div class = "batorbol">
+			<img src = "../Teams/images/bat_cartoon.png" class = "bt-sk btorbwls" onclick = "choseStat('bat')">
+			<img src = "../Teams/images/ball_cartoon.png" class = "bol-sk btorbwls" onclick = "choseStat('bowl')">
+			<p class = "toss-name stat-bat" onclick = "choseStat('bat')">Bat</p>
+			<p class = "toss-name stat-bowl" onclick = "choseStat('bowl')">Bowl</p>
+			<p class = "stat-head">Bat or Bowl</p>
+		</div>
+		<div class = 'floss-glass' onclick="changeMsgCont('floss')"></div>
+		<div class = "rect-container">
+			<div class = "three-rect rect1"></div>
+			<div class = "three-rect rect2"></div>
+			<div class = "three-rect rect3"></div>
+		</div>
+
+		<div class = "chose-vro">
+			<i class = 'fas fa-times' onclick = "closecvro()"></i>
+			<span>Select Player</span>
+		</div>
+		<div class = "det-res-div">
+			<p class = "detres-head">Scorecard</p>
+			<div class = "det-res dr-wbs">
+				<p class = "dr-head">WarBringers</p>
+				<table class = "det-res-table drt-wbs">
+					<tr class = "intro">
+						<td class="intro1">Player</td>
+						<td class="intro2">Runs Scored</td>	
+					</tr>
+				</table>
+			</div>
+			<div class = "det-res dr-hwl">
+				<p class = "dr-head">Howlers</p>
+				<table class = "det-res-table drt-hwl">
+					<tr class = "intro">
+						<td>Player</td>
+						<td>Runs Scored</td>	
+					</tr>
+				</table>
+			</div>
+			<p class = "match-end">Match has ended</p>
+			<a href="/home"><button class = "home-btn">Go to Home</button></a>
+		</div>
+		<div class = "balls-div">
+
+			<div id = "heading-all">Ball #1</div>
+
+			<div class = "name-block you-name-blo"></div>
+			<div class = "name-block opp-name-blo"></div>
+
+			<div class = "you-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			<div class = "other-num big-num"><i class = "fa fa-cog fa-spin"></i></div>
+			
+			<div class = "scores"><span class="score" id = "player-score">0</span>:<span class="score" id = "opponent-score">0</span></div>
+
+			<div class = "you-stat stat-block"></div>
+			<div class = "you-comp comp-block">Comp</div>
+			<div class = "other-stat stat-block"></div>
+			<div class = "other-comp comp-block">Comp</div>
+
+			<ul class = "messages-div">
+				<li class = "small-msg">Hello</li>
+				<li class = "small-msg">Good Luck</li>
+				<li class = "small-msg">😂😂😂</li>
+				<li class = "small-msg">Arey! Enti ra Idhi?</li>
+				<li class = "small-msg">😝😝😝</li>
+				<li class = "small-msg">Make it fast</li>
+				<li class = "small-msg">Game ra!</li>
+				<li class = "small-msg">Test</li>
+			</ul>
+
+			<div class = "ball-grid-view">
+				<button class = "ball-btn btn1" onclick = "ballr(1)"><span class = 'num'>1</span></button>
+				<button class = "ball-btn btn2" onclick = "ballr(2)"><span class = 'num'>2</span></button>
+				<button class = "ball-btn btn3" onclick = "ballr(3)"><span class = 'num'>3</span></button>
+				<button class = "ball-btn btn4" onclick = "ballr(4)"><span class = 'num'>4</span></button>
+				<button class = "ball-btn btn5" onclick = "ballr(5)"><span class = 'num'>5</span></button>
+				<button class = "ball-btn btn6" onclick = "ballr(6)"><span class = 'num'>6</span></button>
+			</div>
+		</div>
+	</main>
+
+	<div class ="password-box">
+		Enter Password:
+		<input type="number" id="passwd" class = "passwd-input">
+		<button class = "passwd-sbmt" onclick = "join()">Join</button>
+	</div>
+	<div class = "alert-box"></div>
+
+	<script src="../../socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		const roomId = <%- JSON.stringify(id) -%>;
+		var name = <%- JSON.stringify(nm) -%>;
+		var pwd = <%- JSON.stringify(pwd) -%>;
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script src="../Teams/teamclient.js"></script>
+</body>
+</html>
